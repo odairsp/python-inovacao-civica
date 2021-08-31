@@ -46,14 +46,14 @@ DTYPE = {
 print("lendo csv reembolso...")
 df = pd.read_csv(
     "reembolso-2019/Ano-2019.csv", 
-    delimiter=";", 
-    dtype=DTYPE, 
+    delimiter=";",
+    dtype=DTYPE,
     low_memory=False
 )
 
 print("converte to_datetime...")
 df["datEmissao"] = pd.to_datetime(
-    df.datEmissao, 
+    df.datEmissao,
     format='%Y-%m-%d'
 )
 
@@ -72,9 +72,9 @@ DTYPE = {
 }
 print("lendo csv empresas...")
 df_empresas = pd.read_csv(
-    '2019-11-19-companies.csv.xz', 
+    '2019-11-19-companies.csv.xz',
     compression='xz',
-    dtype=DTYPE,  
+    dtype=DTYPE,
 )
 df_empresas['situation_date'] = pd.to_datetime(df_empresas['situation_date'], format="%Y-%m-%d")
 
